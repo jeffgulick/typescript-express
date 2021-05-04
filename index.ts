@@ -1,10 +1,10 @@
 import express from 'express';
-// rest of the code remains same
 const app = express();
-const PORT = 8000;
 
-app.get('/', (req, res) => res.send('Express + TypeScript Server'));
+app.get('/', (req, res) =>
+  res.send('welcome to your basic Express Server with TypeScript')
+);
 
-app.listen(PORT, () => {
-  console.log(`⚡️[server]: Server is running at https://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => console.log(`⚡️[server]: Listening on port ${PORT}`));
